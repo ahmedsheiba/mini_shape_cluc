@@ -1,0 +1,141 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML2.java to edit this template
+ */
+package shape;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+
+/**
+ *
+ * @author sheib
+ */
+public class FXMLDocumentController implements Initializable {
+    
+    //for circle
+     @FXML
+    private TextField t1, t2, t3, t4, t5, t6, t7 ,t8;
+     
+     //for cylinder
+    @FXML
+    private TextField tt1,tt2,tt3,tt4,tt5,tt6,tt7,tt8,tt9,tt10,tt11,tt12;
+     
+     //for rectangle
+    @FXML
+    private TextField tr1, tr2 ,tr3,tr4,tr5,tr6,tr7,tr8,tr9,tr10,tr11,tr12;
+    
+    //for square
+    @FXML
+    private TextField ts1, ts2, ts3, ts4, ts5, ts6, ts7, ts8;
+
+    
+   
+    
+    @FXML
+    private void radiusCircle(ActionEvent event) {
+        Circle c1 = new Circle();
+        c1.setRadius(Double.parseDouble(t1.getText()));
+        
+        t2.setText(String.valueOf(c1.getArea()));
+    }
+    @FXML
+    private void areaCircle(ActionEvent event) {
+      Circle c1 = new Circle();
+        t4.setText(String.valueOf(c1.getRadiusByArea(Double.parseDouble(t3.getText()))));
+    }
+    @FXML
+    private void radiuscCircle(ActionEvent event) {
+        Circle c1 = new Circle();
+        c1.setRadius(Double.parseDouble(t5.getText()));
+        t6.setText(String.valueOf(c1.getCircumference()));
+    }
+    @FXML
+    private void circumCircle(ActionEvent event) {
+      Circle c1 = new Circle();
+      t8.setText(String.valueOf(c1.getRadiusByCircumference(Double.parseDouble(t7.getText()))));
+    }
+    @FXML
+    private void getAreaCy(ActionEvent event) {
+        Cylinder c2 = new Cylinder();
+        tt3.setText(String.valueOf(c2.getSideArea(Double.parseDouble(tt1.getText()),Double.parseDouble(tt2.getText()))));
+    }
+    @FXML
+    private void getHeightByAreaCy(ActionEvent event) {
+        Cylinder c2 = new Cylinder();
+        tt6.setText(String.valueOf(c2.getHeightBySideArea(Double.parseDouble(tt4.getText()),Double.parseDouble(tt5.getText()))));
+    }  
+    @FXML
+    private void getVolume(ActionEvent event) {
+        Cylinder c2 = new Cylinder();
+        tt9.setText(String.valueOf(c2.getvolume(Double.parseDouble(tt7.getText()),Double.parseDouble(tt8.getText()))));
+    }
+    @FXML
+    private void getHeightByVolume(ActionEvent event) {
+        Cylinder c2 = new Cylinder();
+        tt12.setText(String.valueOf(c2.getHeightByVolume(Double.parseDouble(tt11.getText()),Double.parseDouble(tt10.getText()))));
+    }
+    @FXML
+    private void getAreaRectangle (ActionEvent event) {
+     Rectangle r1 = new Rectangle();
+        r1.setLength(Double.parseDouble(tr1.getText()));
+        r1.setWidth(Double.parseDouble(tr2.getText()));
+        tr3.setText(String.valueOf(r1.getArea()));
+    }
+    @FXML
+    private void getWidthRectangle (ActionEvent event) {
+     Rectangle r1 = new Rectangle();
+         tr6.setText(String.valueOf(r1.getWidthByArea(Double.parseDouble(tr4.getText()),Double.parseDouble(tr5.getText()))));
+    }
+    @FXML
+    private void getParametrRectangle (ActionEvent event) {
+        Rectangle r1 = new Rectangle();
+        r1.setLength(Double.parseDouble(tr7.getText()));
+        r1.setWidth(Double.parseDouble(tr8.getText()));
+        tr9.setText(String.valueOf(r1.getParameter()));
+    }
+    @FXML
+    private void getWidthParRectangle (ActionEvent event) {
+     Rectangle r1 = new Rectangle();
+     tr12.setText(String.valueOf(r1.getWidthByParameter(Double.parseDouble(tr10.getText()),Double.parseDouble(tr11.getText()))));
+    }
+    @FXML 
+    private void getareaSquare (ActionEvent event){
+       Square s1 = new Square();
+       
+       s1.setLength(Double.parseDouble(ts1.getText()));
+       ts2.setText(String.valueOf(s1.getArea()));
+    }    
+    @FXML 
+    private void getlengthparArea (ActionEvent event){
+       Square s1 = new Square();
+       
+       
+       ts4.setText(String.valueOf(s1.getLengthByArea(Double.parseDouble(ts3.getText()))));
+    }
+    @FXML 
+    private void getperimeterSquare (ActionEvent event){
+       Square s1 = new Square();
+       
+       s1.setLength(Double.parseDouble(ts5.getText()));
+       ts6.setText(String.valueOf(s1.getParameter()));
+    }
+    @FXML 
+    private void getlengthparParimeter (ActionEvent event){
+       Square s1 = new Square();
+      
+      ts8.setText(String.valueOf(s1.getLengthByArea(Double.parseDouble(ts7.getText()))));
+    }
+    
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }
+}  
+    
+
