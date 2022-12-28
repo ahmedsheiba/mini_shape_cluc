@@ -1,0 +1,56 @@
+package shape;
+
+public class Cylinder extends Circle {
+    private  double height;
+
+    public Cylinder() {
+    }
+
+    public Cylinder(double radius, double height) {
+        super(radius);
+        this.height = height;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    @Override
+    public void setRadius(double radius) {
+        super.setRadius(radius);
+    }
+
+    @Override
+    public double getRadius() {
+        return super.getRadius();
+    }
+
+    
+    public double getSideArea(double height, double raduis) {
+        return (2*Math.PI*height*raduis);
+    }
+
+    public double getRadiusBySideArea(double area, double height ) {
+        return area/(2*Math.PI*height);
+    }
+   
+            
+    public double getHeightBySideArea(double area, double raduis){
+        return area/(2*Math.PI*raduis);
+    }
+    public double getvolume(double raduis, double height)
+    {
+        return Math.PI*raduis*raduis*height;
+    }
+    public double getHeightByVolume(double raduis, double volume){
+        return (volume)/(Math.PI*raduis*raduis);
+    }
+    public double getRaduisByVolume(double height, double volume)
+    {
+        return (Math.sqrt(volume/(Math.PI*height)));
+    }
+}
